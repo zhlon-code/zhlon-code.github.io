@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://zhlon-code.github.io</id>
+    <title>Gridea</title>
+    <updated>2021-01-11T06:03:59.901Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://zhlon-code.github.io"/>
+    <link rel="self" href="https://zhlon-code.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://zhlon-code.github.io/images/avatar.png</logo>
+    <icon>https://zhlon-code.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[linux安装配置maven]]></title>
+        <id>https://zhlon-code.github.io/post/linux-an-zhuang-pei-zhi-maven/</id>
+        <link href="https://zhlon-code.github.io/post/linux-an-zhuang-pei-zhi-maven/">
+        </link>
+        <updated>2021-01-11T06:02:05.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="1-下载解压到指定文件夹">1. 下载解压到指定文件夹</h4>
+<pre><code>tar -zxvf apache-maven-×××-bin.tar.gz
+</code></pre>
+<h4 id="2-配置国内镜像源">2. 配置国内镜像源</h4>
+<pre><code class="language-xml">切换至maven的conf 目录下，修改settings.xml 文件
+&lt;mirror&gt;  
+        &lt;id&gt;nexus-osc&lt;/id&gt;  
+        &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;  
+        &lt;name&gt;Nexus osc&lt;/name&gt;  
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;  
+&lt;/mirror&gt; 
+</code></pre>
+<h4 id="3-配置本地仓库">3. 配置本地仓库</h4>
+<pre><code>切换至maven的conf 目录下，修改settings.xml 文件
+&lt;localRepository&gt; &lt;仓库路径&gt; &lt;/localRepository&gt;
+</code></pre>
+<h4 id="4-配置环境变量">4. 配置环境变量</h4>
+<pre><code>编辑/etc/profile文件
+export MAVEN_HOME= &lt;maven安装路径&gt; 
+export PATH=${PATH}:${MAVEN_HOME}/bin
+最后控制台输入 source /etc/profile
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[linux安装配置jdk]]></title>
+        <id>https://zhlon-code.github.io/post/linux-an-zhuang-pei-zhi-jdk/</id>
+        <link href="https://zhlon-code.github.io/post/linux-an-zhuang-pei-zhi-jdk/">
+        </link>
+        <updated>2021-01-06T07:53:33.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="1-下载解压jdk">1. 下载解压jdk</h4>
+<pre><code>tar -zxvf jdk***.tar.gz
+</code></pre>
+<h4 id="2-配置环境变量">2. 配置环境变量</h4>
+<pre><code>编辑 /etc/profile 文件
+export JAVA_HOME= &lt;安装路径&gt;
+export PATH=${JAVA_HOME}/bin:$PATH
+export CLASSPATH=.:${JAVA_HOME}/lib
+最后控制台输入 source /etc/profile
+</code></pre>
+]]></content>
+    </entry>
+</feed>
